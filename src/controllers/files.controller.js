@@ -119,7 +119,7 @@ filesCtrl.deletefile = async (req, res) => {
         const file = await File.findById(req.params.id);
         await fs.unlink(path.join(__dirname,`../public/assets/${file.filename}`));
         const delF = await File.findByIdAndDelete(req.params.id);
-        const files = await File.find();
+        const files = await File.find({userId: file.userId});
         delAtCat(req.params.id)
         res.json(files);
     } catch (error) {
