@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* === Plugin styles === */
+
+
+@import '~react-datepicker/dist/react-datepicker.css';
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+@import "./variables";
+@import "~compass-mixins/lib/compass";
+@import "~compass-mixins/lib/animate";
+@import "~bootstrap/scss/bootstrap";
+@import "./fonts";
+@import "./functions";
+
+/* === Icon fonts === */
+@import "~@mdi/font/scss/materialdesignicons";
+@import "~font-awesome/scss/font-awesome";
+
+
+/* === Template mixins === */
+@import "./mixins/animation";
+@import "./mixins/buttons";
+@import "./mixins/badges";
+@import "./mixins/misc";
+@import "./mixins/color-functions";
+@import "./mixins/cards";
+@import "./mixins/blockqoute";
+
+
+/* === Core Styles === */
+@import "./background";
+@import "./typography";
+@import "./reset";
+@import "./responsive";
+@import "./misc";
+@import "./utilities";
+@import "./demo";
+@import "./spinner";
+@import "./dashboard";
+
+/* === Components === */
+
+@import "./components/forms";
+@import "./components/checkbox-radio";
+@import "./components/icons";
+@import "./components/tables";
+@import "./components/buttons";
+@import "./components/badges";
+@import "./components/cards";
+@import "./components/dropdowns";
+@import "./components/todo-list";
+@import "./components/spinner";
+@import "./components/bootstrap-progress";
+@import "./components/preview";
+
+@import "./components/landing-screens/auth";
+
+/* === Plugin Overrides === */
+
+/* === Layout === */
+@import "./navbar";
+@import "./sidebar";
+@import "./footer";
+@import "./layout";
