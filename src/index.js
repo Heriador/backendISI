@@ -1,5 +1,7 @@
-require('dotenv').config();
-
+if(process.env.NODE_ENV !== 'production'){
+    require('dotenv').config();    
+}
+const path = require('path');
 const app = require('./server');
 const port = app.get('port');
 require('./database');
