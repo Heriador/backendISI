@@ -67,8 +67,9 @@ userCtrl.DeleteUser = async (req,res) =>{
 userCtrl.tokenValid = async (req,res) =>{
     try {
         const token = req.header('x-auth-token');
-        if(!token) return res.json(false);
-
+        if(!token){
+            res.json(false);
+        }
         const verified = jwt.verify(token,process.env.JWT_SECRET)
         if(!verified) return res.json(false)
 
@@ -76,7 +77,7 @@ userCtrl.tokenValid = async (req,res) =>{
         if(!user) return res.json(false)
         
         return res.json(true)
-    } catch (error) {
+    } catch (err) {
         res.status(500).json({message: err.message})
     }
 }
