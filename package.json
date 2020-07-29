@@ -4,9 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cd frontend && npm run build",
-    "install-front": "cd frontend && npm install",
-    "heroku-postbuild": "npm run install-front && npm run build",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },

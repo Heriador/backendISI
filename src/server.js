@@ -17,13 +17,6 @@ app.use(express.urlencoded({extended: true}))
 
 app.use('/public', express.static(`${__dirname}/public`)); 
 
-app.use(express.static(path.join(__dirname, '../frontend/build')));
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
-});
-
-
-
 
 //Routes
 app.use('/api/users',require('./routes/users.routes'));
