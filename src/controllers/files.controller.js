@@ -14,11 +14,11 @@ const imgUrl = filename =>{
 
     switch(filename.split(".")[1]){
         case 'png':
-            return `${host}/public/img/${filename}`;
+            return `${host}/public/assets/${filename}`;
         case 'jpg':
-            return `${host}/public/img/${filename}`;
+            return `${host}/public/assets/${filename}`;
         case 'jpeg':
-            return `${host}/public/img/${filename}`;
+            return `${host}/public/assets/${filename}`;
         case 'pdf':
             return `${host}/public/img/pdf.png`;
         case 'xlsx':
