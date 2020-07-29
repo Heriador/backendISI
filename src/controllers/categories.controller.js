@@ -49,8 +49,9 @@ categoriesCtrl.updateCategorie = async (req,res) => {
 
 categoriesCtrl.deleteCategorie = async (req,res) =>{
     try {
+        const cat = await Categories.findById(req.params.id);
         await Categories.findByIdAndDelete(req.params.id)
-        const data = await Categories.find();
+        const data = await Categories.find({userId: cat.userId});
         res.json(data);
     } catch (error) {
         console.error(error.message);
