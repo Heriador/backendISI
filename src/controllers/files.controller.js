@@ -7,32 +7,32 @@ const fs = require('fs').promises;
 const path = require('path');
 
 const Url = filename =>{
-    return `${host}:${port}/public/assets/${filename}`;
+    return `${host}/public/assets/${filename}`;
 }
 
 const imgUrl = filename =>{
 
     switch(filename.split(".")[1]){
         case 'png':
-            return `${host}:${port}/public/img/${filename}`;
+            return `${host}/public/img/${filename}`;
         case 'jpg':
-            return `${host}:${port}/public/img/${filename}`;
+            return `${host}/public/img/${filename}`;
         case 'jpeg':
-            return `${host}:${port}/public/img/${filename}`;
+            return `${host}/public/img/${filename}`;
         case 'pdf':
-            return `${host}:${port}/public/img/pdf.png`;
+            return `${host}/public/img/pdf.png`;
         case 'xlsx':
-            return `${host}:${port}/public/img/xlsx.png`;
+            return `${host}/public/img/xlsx.png`;
         case 'docx':
-            return `${host}:${port}/public/img/word.png`;
+            return `${host}/public/img/word.png`;
         case 'csv':
-            return `${host}:${port}/public/img/csv.png`;
+            return `${host}/public/img/csv.png`;
         case 'mp4':
-            return `${host}:${port}/public/img/video.png`;
+            return `${host}/public/img/video.png`;
         case 'mp3':
-            return `${host}:${port}/public/img/audio.png`;
+            return `${host}/public/img/audio.png`;
         case 'ppt':
-            return `${host}:${port}/public/img/powerpoint.png`;
+            return `${host}/public/img/powerpoint.png`;
     }
 }
 
