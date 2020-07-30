@@ -2,7 +2,7 @@ const File = require("../models/Files");
 const Categories = require('../models/Categories');
 const { appConfig } = require("../config/index");
 const filesCtrl = {};
-const { host,port} = appConfig;
+const { host} = appConfig;
 const fs = require('fs').promises;
 const path = require('path');
 
