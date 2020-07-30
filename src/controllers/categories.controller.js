@@ -19,7 +19,7 @@ categoriesCtrl.createCategorie = async (req,res) =>{
             userId
         })
         await newCategorie.save();
-        const data = await Categories.find();
+        const data = await Categories.find({userId});
         res.json(data)
     } catch (error) {
         console.error(error.message);
