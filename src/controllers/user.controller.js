@@ -1,5 +1,4 @@
 const User = require('../models/User');
-const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const userCtrl = {}
 
@@ -30,8 +29,11 @@ userCtrl.SignUp = async (req,res) => {
 
 userCtrl.LogIn = async (req,res) => {
     try {
+        
         const {email,password} = req.body;
+        console.log(email,password);
         const user= await User.findOne({email });
+        console.log(user);
         if(!user){
             res.status(400).json({msg: 'ninguna cuenta se ha resgitrado con esta correo'});
         }
@@ -41,44 +43,9 @@ userCtrl.LogIn = async (req,res) => {
             res.status(400).json({msg: 'invalid credentials'})
         } 
 
-        const token = jwt.sign({id: user._id}, process.env.JWT_SECRET);
-        res.json({
-            token,
-            user:{
-                id: user._id,
-                email: user.email,
-                name: user.name
-            }
-        })
+        res.json(user)
     } catch (err) {
         res.status(500).json({msg: err.message})
-    }
-}
-
-userCtrl.DeleteUser = async (req,res) =>{
-    try {
-        const deletedUser = await User.findByIdAndDelete(req.user);
-        res.json(deletedUser);
-    } catch (error) {
-        res.status(500).json({message: err.message})
-    }
-}
-
-userCtrl.tokenValid = async (req,res) =>{
-    try {
-        const token = req.header('x-auth-token');
-        if(!token){
-            res.json(false);
-        }
-        const verified = jwt.verify(token,process.env.JWT_SECRET)
-        if(!verified) return res.json(false)
-
-        const user = await User.findById(verified.id);
-        if(!user) return res.json(false)
-        
-        return res.json(true)
-    } catch (err) {
-        res.status(500).json({message: err.message})
     }
 }
 

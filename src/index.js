@@ -8,5 +8,5 @@ const host = process.env.APP_HOST
 require('./database');
 
 app.listen(port, () => {
-    console.log(`server on http://localhost:${port}`);
+    console.log(`server on ${port}`);
 })
