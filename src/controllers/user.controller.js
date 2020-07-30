@@ -32,7 +32,6 @@ userCtrl.LogIn = async (req,res) => {
         
         const {email,password} = req.body;
         const user= await User.findOne({email });
-        console.log(user);
         if(!user){
             res.status(400).json({msg: 'ninguna cuenta se ha resgitrado con esta correo'});
         }
